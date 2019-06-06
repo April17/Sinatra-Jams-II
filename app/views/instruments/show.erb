@@ -1,0 +1,11 @@
+<h1>Welcome to <%= @instrument.name %>'s page! </h1>
+<p>Brand: <%= @instrument.brand %> </p>
+<h2><%= @instrument.name %>'s Instruments</h2>
+
+<% @artists.each do |artist| %>
+  <li> <%= artist.name %> </li>
+<% end %>
+<br>
+<a href="/artists/<%= @instrument.id %>/edit">Edit <%= @instrument.name %>'s information.</a>
+<br/>
+<a href="/artists">Back to the list of artists.</a>

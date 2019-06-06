@@ -1,27 +1,12 @@
 <h1>Edit <%= @artist.name %> </h1>
 
 <form action="/artists/<%= @artist.id %>" method="POST">
-  <!-- #patch over rides the post... -->
   <input type="hidden" name="_method" value="PATCH">
   <%= erb :"artists/form" %>
-
-  <h3>What can you play?</h3>
-
-  <% @instruments.each do |instrument| %>
-    <input type="checkbox" name="artist[instrument_ids][]" value="<%= instrument.id %>"><%= instrument.name %><br>
-  <% end %>
-
   <input type="submit" value="Edit <%= @artist.name %>" />
 </form>
 
 <br/>
-
-
-
-
-
-
-
 
 <a href="/artists/<%= @artist.id %>">Back to <%= @artist.name %>'s Show Page.</a>
 <br/>
